@@ -1,0 +1,14 @@
+<div *ngIf="loading" id="loader">
+    <img src="https://media.tenor.com/G7LfW0O5qb8AAAAC/loading-gif.gif" alt="loader">
+</div>
+
+<h1 *ngIf="!loading">FakeStore API Data</h1>
+
+<div *ngIf="!loading" id="parent">
+    <div id="child" *ngFor="let item of data" routerLink='details/{{item.id}}'>
+        <img src={{item.image}} alt={{item.title}}>
+        <h3>{{item.title}}</h3>
+        <h3>Price: ₹{{item.price}}</h3>
+        <p>{{item.description.substring(0,90)}}...</p>
+    </div>
+</div>

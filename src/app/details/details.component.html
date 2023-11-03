@@ -1,0 +1,12 @@
+<div *ngIf="loading" id="loader">
+    <img src="https://media.tenor.com/G7LfW0O5qb8AAAAC/loading-gif.gif" alt="loader">
+</div>
+
+<div *ngIf="!loading" id="child">
+    <img src={{product?.image}} alt={{product?.title}}>
+    <h3>{{product?.title}}</h3>
+    <h3>Price: ₹{{product?.price}}</h3>
+    <h3>Category: {{product?.category}}</h3>
+    <h3>Rating: {{product?.rating?.rate}} out of 5 Stars by {{product?.rating?.count}} Peoples.</h3>
+    <p>{{product?.description?.substring(0,90)}}...</p>
+</div>
